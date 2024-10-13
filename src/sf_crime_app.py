@@ -12,7 +12,7 @@ st.markdown("""
         }
         .title {
             text-align: center;
-            color: #f8f9fa;
+            color: #000000;
             font-size: 36px;
             margin-top: 20px;
         }
@@ -39,8 +39,8 @@ st.markdown('<h1 class="title">Police Department Incidents Data (2016)</h1>', un
 # Sidebar filters
 st.sidebar.title("Filters")
 
-# Display the data in the app
-st.write("Police Department Incidents Data (2016)", data.head())
+# # Display the data in the app
+# st.write("Police Department Incidents Data (2016) - Before Applying Filters", data.head())
 
 # Category selection
 unique_categories = data['Category'].unique()
@@ -67,6 +67,12 @@ if 'DayOfWeek' in data.columns and not filtered_data.empty:
     selected_day = st.sidebar.selectbox("Select a day of the week:", ["Select"] + day_order)
     if selected_day != "Select":
         filtered_data = filtered_data[filtered_data['DayOfWeek'] == selected_day]
+
+if not filtered_data.empty:
+    st.write("Police Department Incidents Data (2016) - After Applying Filters on the left (Top 5 Rows)", filtered_data.head())
+else:
+    st.error("No data to display in the table. Please adjust the filters.")
+st.markdown("""---""")
 
 # Display the map
 if not filtered_data.empty and 'X' in filtered_data.columns and 'Y' in filtered_data.columns:
