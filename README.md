@@ -4,7 +4,7 @@ This repository contains a Streamlit application that visualizes police departme
 [**App**]([url](https://chrispamis.streamlit.app/))
 
 If you see the below message, click on Yes, get this app back up! button
-![image](https://github.com/user-attachments/assets/c338e0d5-22e7-4a05-a7e8-b82f3bdec630)
+[![image](https://github.com/user-attachments/assets/c338e0d5-22e7-4a05-a7e8-b82f3bdec630)](https://github.com/TheSmartCatt/sf-crime-dashboard/blob/main/src/Error.jpg)
 
 This repository contains a Streamlit application that visualizes police department incident data from San Francisco for the year 2016. The app allows users to interact with and explore crime data on a map, filtering incidents by categories, months and days of the week.
 
