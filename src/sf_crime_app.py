@@ -38,6 +38,10 @@ st.markdown('<h1 class="title">Police Department Incidents Data (2016)</h1>', un
 
 # Sidebar filters
 st.sidebar.title("Filters")
+
+# Display the data in the app
+st.write("Police Department Incidents Data (2016)", data.head())
+
 # Category selection
 unique_categories = data['Category'].unique()
 selected_category = st.sidebar.selectbox("Select a category:", ["Select"] + list(unique_categories))
