@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pydeck as pdk
+import os
 
 # Streamlit dark theme configuration
 st.set_page_config(page_title="Police Incidents Dashboard", page_icon=":police_car:", layout="wide")
@@ -28,7 +29,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load the dataset
-file_path = './Police_Department_Incidents_Previous_Year_2016.csv'
+current_directory = os.path.dirname(__file__)
+file_path = os.path.join(current_directory, 'Police_Department_Incidents_Previous_Year_2016.csv')
 data = pd.read_csv(file_path)
 data['Date'] = pd.to_datetime(data['Date'], errors='coerce')
 data['Time'] = pd.to_datetime(data['Time'], format='%H:%M', errors='coerce').dt.hour
