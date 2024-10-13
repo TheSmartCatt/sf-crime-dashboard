@@ -28,7 +28,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load the dataset
-file_path = 'Police_Department_Incidents_Previous_Year_2016.csv'
+file_path = './Police_Department_Incidents_Previous_Year_2016.csv'
 data = pd.read_csv(file_path)
 data['Date'] = pd.to_datetime(data['Date'], errors='coerce')
 data['Time'] = pd.to_datetime(data['Time'], format='%H:%M', errors='coerce').dt.hour
